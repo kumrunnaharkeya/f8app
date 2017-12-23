@@ -15,6 +15,12 @@ public class MainActivity extends ReactActivity {
     protected String getMainComponentName() {
         return "F82017";
     }
+    
+    @Override
+protected void onCreate(Bundle savedInstanceState) {
+        AppCenter.start(getApplication(), "94cbd92e-6d36-4baa-b480-51e6c28464b9",
+                Analytics.class, Crashes.class);
+    
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
