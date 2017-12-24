@@ -17,9 +17,17 @@ public class MainActivity extends ReactActivity {
     }
     
     @Override
-protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         AppCenter.start(getApplication(), "94cbd92e-6d36-4baa-b480-51e6c28464b9",
                 Analytics.class, Crashes.class);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_root);
+
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+
+        mViewPager = (ViewPager) findViewById(R.id.container);
+        mViewPager.setAdapter(mSectionsPagerAdapter);
+    }
     
 
     @Override
